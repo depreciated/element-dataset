@@ -2,9 +2,9 @@ node_modules/
 .python-version
 .env
 .aux
+src/
 src/build
 **/test/
-gulpfile.*
 .eslintrc.*
 .stylelint.*
 .travis.yml

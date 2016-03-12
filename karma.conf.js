@@ -49,7 +49,7 @@ module.exports = function (config) {
 	}
 
 	config.set({
-		frameworks: ['browserify', 'mocha', 'fixture'],
+		frameworks: ['mocha', 'fixture', 'browserify'],
 		reporters: ['mocha'],
 		files: [
 			'test/*.js',
@@ -72,6 +72,7 @@ module.exports = function (config) {
 			configure: (bundle) => {
 				bundle.on('prebundle', () => {
 					bundle.external('mocha')
+					bundle.external(`${options.name}`)
 				})
 			}
 		},

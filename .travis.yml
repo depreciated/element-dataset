@@ -20,3 +20,7 @@ branches:
   - "/^hotfix-.*$/"
   - "/^test-.*$/"
 sudo: false
+
+script:
+  - npm run build
+  - npm test

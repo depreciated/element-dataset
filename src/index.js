@@ -2,7 +2,7 @@
 
 'use strict'
 
-module.exports = function () {
+function elementDatasetPolyfill () {
 	if (!document.documentElement.dataset &&
 		(
 			!Object.getOwnPropertyDescriptor(Element.prototype, 'dataset')  ||
@@ -62,3 +62,5 @@ module.exports = function () {
 		Object.defineProperty(Element.prototype, 'dataset', descriptor)
 	}
 }
+
+export default elementDatasetPolyfill

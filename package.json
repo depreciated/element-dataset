@@ -1,7 +1,7 @@
 {
   "name": "element-dataset",
   "description": "HTMLElement.dataset polyfill",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "homepage": "https://github.com/epiloque/element-dataset",
   "author": {
     "name": "Mark Milstein",
@@ -17,22 +17,39 @@
     "polyfill"
   ],
   "license": "BSD-3-Clause",
-  "main": "src/index.js",
+  "main": "./lib/index.js",
+  "jspm": {
+    "main": "dist/element-dataset.js"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/epiloque/element-dataset"
   },
+  "files": [
+    "lib",
+    "extras",
+    "dist"
+  ],
   "engines": {
     "node": ">=4.0.0"
   },
   "scripts": {
-    "test": "node_modules/karma/bin/karma start"
+    "test": "node_modules/karma/bin/karma start",
+    "build": "node ./bin/build.js",
+    "build-node": "bash bin/build-node.sh"
+  },
+  "browser": {
+    "./lib/index.js": "./lib/index-browser.js"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.5.0",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
+    "bundle-collapser": "^1.2.1",
     "chai": "^3.5.0",
+    "denodeify": "^1.2.1",
+    "derequire": "^2.0.3",
+    "findit": "^2.0.0",
     "is-ci": "^1.0.8",
     "karma": "^0.13.21",
     "karma-browserify": "^5.0.2",
@@ -42,21 +59,15 @@
     "karma-mocha": "^0.2.2",
     "karma-mocha-reporter": "^1.2.2",
     "karma-phantomjs-launcher": "^1.0.0",
+    "mkdirp": "^0.5.1",
     "mocha": "^2.4.5",
+    "ncp": "^2.0.0",
     "phantomjs-prebuilt": "^2.1.4",
+    "rimraf": "^2.5.2",
+    "rollup": "^0.25.4",
+    "stream-to-promise": "^1.1.0",
+    "uglify-js": "^2.6.2",
     "watchify": "^3.7.0"
-  },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "es2015"
-          ]
-        }
-      ]
-    ]
   },
   "babel": {
     "presets": [

@@ -5,7 +5,9 @@
 'use strict'
 
 const chai = require('chai')
-const elementDataset = require('../src')
+const elementDatasetPolyfill = require('../lib/index-browser')
+
+elementDatasetPolyfill()
 
 describe('element-dataset', () => {
 	before(function () {
@@ -25,7 +27,7 @@ describe('element-dataset', () => {
 	})
 
 	it('get', function () {
-		elementDataset()
+
 		const el = document.getElementById('element-dataset-test')
 
 		chai.expect(el.dataset.user).to.equal('john doe')
@@ -34,7 +36,6 @@ describe('element-dataset', () => {
 	})
 
 	it('set', function () {
-		elementDataset()
 		const el = document.getElementById('element-dataset-test')
 
 		el.dataset.dateOfBirth = '1960-10-03'
