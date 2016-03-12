@@ -1,26 +1,22 @@
 language: node_js
-
 node_js:
-  - "4.0"
-  - "4"
-  - "5"
-
+- '5'
 env:
   matrix:
-    - CXX=g++-4.8
-
+  - CXX=g++-4.8
+  global:
+  - secure: b4jI1KMweE9RgsjxRA3tCE9kSPZzxnNeJt76BRGfj41hk4GMc1q4cfrE63h5B1IF9O5zpggR1Ow8Agw1Y1pbbVAUhwN47GDoh4aXH+rpwWKa9/Zomfs8q/cR3RnronRGHfZyRSPelupm1FDKZ/HaarGR80788nxAIiK4UXt90dUuTBvP+98f7T9/2v+D0/wZdUuC6GEbHSK0ku4pjtW9cHVEl7Id1S5hv32gyIQ3B4L75/gpAJu+5/tN9fm8OxkMDcxQRIRwULkM1qug/dbkd0atvyEHe3zNE1K7SF8SMj/x0NIrfogCzXpRA9lKKW1R58rKkfgtjgBXaf7odup+woEsnkTtZD+PZ8+YpJtefDB4ZycE7HKVXXk903wYJQGl238S5Dan33QnDe7wDVOdlOfnHilbXGB4TqUsYGkHOroeFNVYAwGdVpjaDjAx4lhWdL1rZq8Q9GAo/P7sWAVvoG7G5MtnWMly1jFlP2q4pSNd5ZeIaZsLV7XkwJrhB54R1B9AOxSSRBVPurt7mzouZ6k4UF+4mTW7Ui74dWV/fUBh1yWNxNYSrFWCreLbbRlO3hkDTW9Vy8rdA3Lk+91Rme5YNhtjMzf3AtI1JfyQRQ2FDbfvk+qSlHPqTBGbebVQKEAUWab2y5WR0CnrRk/FStjCLaTQERaBr+MP1SZOH7A=
+  - secure: Z8FgoPCd6zgm6G0tWcsuegywV0o/VL0yjZy48jHeM6e2FDgybPCEsmFSTz9E+lHXXTixhgJclrIRasQbZ7gROpIkygGcLcBmGQzbpKYeeomgROaOfDHKY881NqpRPY7dTtXTrnVPaxtemmynE1UOljEzvI6zJAhYc3+PJbyClaV9y68OqDB6WUQJ/54CkPEkpdTfBQrtupGvR+WBkoLU0l9X/XbXTSOou3JTE4ivbiSAkY24mgjx0ETr9sL1QMGgja5ouQxDpPJ8iOPOazt1oVHjjhtdVzyDC1M94r3wsWcd0AZqq00Ubn28OiFb1nL7pHN+UW6bkRkhJFDP3Y2Shu7WFqN7ru7O77B5A2JKUm2OgQgPIgGBhXEwQPPvataZ//P4VxdFCNAx6WOwvYrW9p/y+K1ajRU6B1QKha0H+PoCqhLfqBYI/wJ/JdKx0mdX5BhTIVRjcA3uJiLWhkf57YoSsC+xjAmf6q7sDoageJM165WPsr3YqLXvUY0cLV99N8qSukLWsO0Zyjo4o7YVDZ58QJbg/0OLpKYMcDSxH5sYeXk++Kx0VQbAtM+Dp0SxEidcvhzU77C3q9sqT7V/mfmMcTih2YIsjDBODXXjMgb3Ejd3TdLdGvZ4hENB9tZQaAKnFB9kV7mhc9Ev5J3DH/tNrKyoFsLnR3nqfWjKQOI=
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
-
+    - g++-4.8
 branches:
   only:
-    - master
-    - "/^feature-.*$/"
-    - "/^hotfix-.*$/"
-    - "/^test-.*$/"
-
+  - master
+  - "/^feature-.*$/"
+  - "/^hotfix-.*$/"
+  - "/^test-.*$/"
 sudo: false
