@@ -1,0 +1,66 @@
+{
+  "name": "element-dataset",
+  "description": "HTMLElement.dataset polyfill",
+  "version": "0.1.0",
+  "homepage": "https://github.com/epiloque/element-dataset",
+  "author": {
+    "name": "Mark Milstein",
+    "email": "mark@epiloque.com",
+    "url": "https://github.com/epiloque"
+  },
+  "keywords": [
+    "dataset",
+    "html",
+    "element",
+    "html5",
+    "HTMLElement.dataset",
+    "polyfill"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/epiloque/element-dataset"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "test": "node_modules/karma/bin/karma start"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "chai": "^3.5.0",
+    "is-ci": "^1.0.8",
+    "karma": "^0.13.21",
+    "karma-browserify": "^5.0.2",
+    "karma-browserstack-launcher": "^0.1.10",
+    "karma-fixture": "^0.2.6",
+    "karma-html2js-preprocessor": "^0.1.0",
+    "karma-mocha": "^0.2.2",
+    "karma-mocha-reporter": "^1.2.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "mocha": "^2.4.5",
+    "phantomjs-prebuilt": "^2.1.4",
+    "watchify": "^3.7.0"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}

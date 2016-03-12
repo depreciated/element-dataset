@@ -1,0 +1,11 @@
+node_modules/
+.python-version
+.env
+.aux
+src/build
+**/test/
+gulpfile.*
+.eslintrc.*
+.stylelint.*
+.travis.yml
+.hound.yml
