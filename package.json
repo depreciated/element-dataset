@@ -57,7 +57,7 @@
     "karma-fixture": "^0.2.6",
     "karma-html2js-preprocessor": "^0.1.0",
     "karma-mocha": "^0.2.2",
-    "karma-mocha-reporter": "^1.2.2",
+    "karma-mocha-reporter": "^2.0.0",
     "karma-phantomjs-launcher": "^1.0.0",
     "mkdirp": "^0.5.1",
     "mocha": "^2.4.5",
@@ -65,11 +65,13 @@
     "phantomjs-prebuilt": "^2.1.4",
     "rimraf": "^2.5.2",
     "rollup": "^0.25.4",
+    "rollup-plugin-babel": "^2.4.0",
     "stream-to-promise": "^1.1.0",
     "uglify-js": "^2.6.2",
     "watchify": "^3.7.0"
   },
   "babel": {
+    "babelrc": "false",
     "presets": [
       "es2015"
     ]

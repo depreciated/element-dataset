@@ -38,7 +38,6 @@ const comments = `
 //
 
 `
-
 function writeFile (filename, contents) {
 	const tmp = filename + '.tmp'
 	return writeFileAsync(tmp, contents, 'utf-8').then(function () {
@@ -83,7 +82,37 @@ function doBrowserify (path, opts, exclude) {
 
 function doRollup (entry, fileOut) {
 	return rollup.rollup({
-		entry, external
+		entry,
+		external,
+		plugins: [
+			require('rollup-plugin-babel')({
+				exclude: 'node_modules/**',
+				babelrc: false,
+				plugins: [
+					require('babel-plugin-transform-es2015-template-literals'),
+					require('babel-plugin-transform-es2015-literals'),
+					require('babel-plugin-transform-es2015-function-name'),
+					require('babel-plugin-transform-es2015-arrow-functions'),
+					require('babel-plugin-transform-es2015-block-scoped-functions'),
+					require('babel-plugin-transform-es2015-classes'),
+					require('babel-plugin-transform-es2015-object-super'),
+					require('babel-plugin-transform-es2015-shorthand-properties'),
+					require('babel-plugin-transform-es2015-duplicate-keys'),
+					require('babel-plugin-transform-es2015-computed-properties'),
+					require('babel-plugin-transform-es2015-for-of'),
+					require('babel-plugin-transform-es2015-sticky-regex'),
+					require('babel-plugin-transform-es2015-unicode-regex'),
+					require('babel-plugin-check-es2015-constants'),
+					require('babel-plugin-transform-es2015-spread'),
+					require('babel-plugin-transform-es2015-parameters'),
+					require('babel-plugin-transform-es2015-destructuring'),
+					require('babel-plugin-transform-es2015-block-scoping'),
+					require('babel-plugin-transform-es2015-typeof-symbol'),
+					// require('babel-plugin-transform-es2015-modules-commonjs'),
+					[require('babel-plugin-transform-regenerator'), { async: false, asyncGenerators: false }],
+				]
+			})
+		]
 	}).then(function (bundle) {
 		const code = bundle.generate({format: 'cjs'}).code
 		return writeFile(fileOut, addVersion(code))
@@ -103,9 +132,7 @@ function buildForBrowserify () {
 		return new Promise(function (resolve, reject) {
 			const files = []
 			findit('src_browser').on('file', function (file) {
-				if (/-browser.js$/.test(file)) {
-					files.push(file)
-				}
+				files.push(file)
 			}).on('end', function () {
 				resolve(files)
 			}).on('error', reject)

@@ -35,8 +35,8 @@ function elementDatasetPolyfill () {
 				}
 			}
 
-			for (let index = 0; index < attributes.length; index++) {
-				const attribute = attributes[index]
+			for (let i = 0; i < attributes.length; i++) {
+				const attribute = attributes[i]
 
 				// This test really should allow any XML Name without
 				// colons (and non-uppercase for XHTML)
