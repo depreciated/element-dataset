@@ -13,14 +13,17 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - g++-4.8
-branches:
-  only:
-  - master
-  - "/^feature-.*$/"
-  - "/^hotfix-.*$/"
-  - "/^test-.*$/"
-sudo: false
 
+sudo: false
 script:
-  - npm run build
-  - npm test
+- npm run build
+- npm test
+
+deploy:
+  provider: releases
+  api_key:
+    secure: o0a95Ezu7w8IM55/GVsbkcd8wnfzcw3NJH7eFg8QRjEXoFa4iuEkWyBK1/c9JimQ/uCEUR7I0bb0fvHsfNBv1qbUpYBUMxac4cGSqP6Zp+4mmnZ1jzr9bpVHWzhXz6UvyWB5EhctdsiiQr4vKd4wJ4Di5J8Vac7YmpakuOu09nVASWfhkPCEyb3FxKbhzXdeaNNnhh1hylFl+mTMSI0503T5MWZPk774wIdIE4xvwFdRK9Fc8g3Gv4R1Wv4L6hEmimqUGoFKOqrLICrhJwjTLYgIVuawKtxdQZlT0Q6n/OiXVbcSmSQmIeMKtbYVTNPoTo7lY4UhgBT+OFAPEX2OrvW+SLjYUuimNLWsXc5MaK9TxHcGJkCdsh8JjYVlX3d8uUypXL5A0Ug3eo2RaHkTJ5TP1vmXZdvt5ybqmy6cDJAfU8khuUUWs5B8uSOhe9BYtaQrbWEv9Yqlyc4fLAdkXixE2Nva5ky31PoWADIL0ySSg8uhf8ITavdySbQVmb1OnSTiD9b2jSL84fem6C9x2m3a0Ffy8X16ZGGIaGC4FLAS9Y6oZ7nVf2Pwr8V0ItiFuf2CmoTuQuTPOIxLNZiJ8IVklv1HwzX9Qhb00SdZF1nqJP7pjTrKa418GFNSeFJObab3EABdOCD6uJqNUtcGtIxcsq94B3KkDy5wKHG+kps=
+  file: dist/element-dataset.min.js
+  skip_cleanup: true
+  on:
+    tags: true
