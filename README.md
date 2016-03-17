@@ -8,15 +8,7 @@ with non-standard methods, falls back to native implementation. Tested on IE
 8/9/10, Chrome 16+, FireFox 5+.
 
 To start using in your website,
-[download](https://github.com/epiloque/element-dataset/releases) it and include
-it in your page:
-
-```js
-<script src="element-dataset.min.js"></script>
-<script>
-elementDatasetPolyfill()
-</script>
-```
+[download](https://github.com/epiloque/element-dataset/releases) the AMD module.
 
 Or install it as a npm module (supports Webpack and Browserify): 
 
