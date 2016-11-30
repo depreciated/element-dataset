@@ -28,6 +28,7 @@ deploy:
     on:
       tags: true
   - provider: npm
+    email: robots+npm@epiloque.com
     api_key:
       secure: ewxDPbrYc60wjMKT+nt+mXenSevcJtYmkmKYSXLjcC7gzlVuaLBjSA/ZdLyia0gst/C4enjWc3hW+jOui5dgMXb+zlTjOlWu+OhAE5YVEqY0B3T2qb0enUi5x0zyZIq58koJJSG09nnGRdmJpf1kZBUZ3M4I6WpL3kvO4jsKukqtk8eGJ8cl2VHNIUWR7iNrWnwJiqXqWmLzPe1X2Qgyq8k/rMktojU5FIgkInpntqqxOtmj0ONX3GQbNExh75uKFJza42gjH1d5Y9HIQzVvbAkIp7LAgNd4Jit/BfKA/sGh8aTmkhU2OqrsEnDtX8tMAbofimBTmJtOU7RHPdvW203GVSC4LSSCMYgYpGDYsz2C/ZIpxwZTgkJeRZ9IrrUanIx7/b/BgQioS3RhHbpOQyI51OnlvXfQHBXY+4j8GMWokBUwzGEcupkvhr7vXeQ9sFC40gG1Pq1CxNQ9ajy2gfs4zEodHFM61rN9O+8JqvEEuJnblwUq92bTAc1DkDMrhHTX3pK80RCosugObFdhcFOFGbH/+7Q+nfEwCRPP7ampdpw2G3URfxBpKQFEmHZXqOW7igUQ5+1nChXyblZ8pt/J3IpvUTddjlhFzuy8m7HWEJYgtiSvS2OpbPtz7n631GQn0IyAVDCq5Q6RMe84SWJzikvm8A9204GgRNxOYvU=
     skip_cleanup: true
