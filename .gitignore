@@ -1,5 +1,10 @@
+.roadrunner.json
+release/
+.roadrunner
+.yarnclean
 .idea
 *.iml
+.test-*
 npm-debug.log
 dump.rdb
 node_modules

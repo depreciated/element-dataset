@@ -1,13 +1,10 @@
 {
   "name": "element-dataset",
   "description": "HTMLElement.dataset polyfill",
-  "version": "1.3.0",
+  "version": "2.1.0",
   "homepage": "https://github.com/epiloque/element-dataset",
-  "author": {
-    "name": "Mark Milstein",
-    "email": "mark@epiloque.com",
-    "url": "https://github.com/epiloque"
-  },
+  "author": "Mark Milstein <mark@epiloque.com>",
+  "repository": "https://github.com/epiloque/element-dataset.git",
   "keywords": [
     "dataset",
     "html",
@@ -17,63 +14,35 @@
     "polyfill"
   ],
   "license": "BSD-3-Clause",
-  "main": "./lib/index.js",
   "jspm": {
-    "main": "dist/element-dataset.js"
+    "main": "release/browser/element-dataset.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/epiloque/element-dataset"
+  "main": "./lib/index-browser.js",
+  "jsnext:main": "./lib/index-browser.es.js",
+  "browser": {
+    "./lib/index.js": "./lib/index-browser.js",
+    "./lib/index.es.js": "./lib/index-browser.es.js"
+  },
+  "scripts": {
+    "build": "./node_modules/@epiloque/weaver/bin/weaver.js release --browser --production",
+    "test": "./node_modules/@epiloque/weaver/bin/weaver.js test --browser"
   },
   "files": [
     "lib",
-    "extras",
-    "dist"
+    "release"
   ],
-  "engines": {
-    "node": ">=4.0.0"
-  },
-  "scripts": {
-    "test": "node_modules/karma/bin/karma start",
-    "build": "node ./bin/build.js",
-    "build-node": "bash bin/build-node.sh"
-  },
-  "browser": {
-    "./lib/index.js": "./lib/index-browser.js"
+  "weaver": {
+    "overwrite": [
+      "author"
+    ]
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.5.0",
-    "babelify": "^7.2.0",
-    "browserify": "^13.0.0",
-    "bundle-collapser": "^1.2.1",
-    "chai": "^3.5.0",
-    "denodeify": "^1.2.1",
-    "derequire": "^2.0.3",
-    "findit": "^2.0.0",
-    "is-ci": "^1.0.8",
-    "karma": "^0.13.21",
-    "karma-browserify": "^5.0.2",
-    "karma-browserstack-launcher": "^0.1.10",
-    "karma-fixture": "^0.2.6",
-    "karma-html2js-preprocessor": "^0.1.0",
-    "karma-mocha": "^0.2.2",
-    "karma-mocha-reporter": "^2.0.0",
-    "karma-phantomjs-launcher": "^1.0.0",
-    "mkdirp": "^0.5.1",
-    "mocha": "^2.4.5",
-    "ncp": "^2.0.0",
-    "phantomjs-prebuilt": "^2.1.4",
-    "rimraf": "^2.5.2",
-    "rollup": "^0.25.4",
-    "rollup-plugin-babel": "^2.4.0",
-    "stream-to-promise": "^1.1.0",
-    "uglify-js": "^2.6.2",
-    "watchify": "^3.7.0"
+    "tape": "^4.6.2",
+    "jquery": "^3.1.1",
+    "@epiloque/weaver": "^3.3.34",
+    "babel-preset-conglomerate": "^3.3.34"
   },
-  "babel": {
-    "babelrc": "false",
-    "presets": [
-      "es2015"
-    ]
+  "dependencies": {
+    "babel-runtime": "^6.18.0"
   }
 }
