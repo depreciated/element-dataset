@@ -37,8 +37,8 @@
   "devDependencies": {
     "tape": "^4.6.3",
     "jquery": "^3.1.1",
-    "@epiloque/weaver": "^3.5.0",
-    "babel-preset-conglomerate": "^3.5.0"
+    "@epiloque/weaver": "^3.5.1",
+    "babel-preset-conglomerate": "^3.5.1"
   },
   "dependencies": {
     "babel-runtime": "^6.18.0"
