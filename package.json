@@ -15,21 +15,19 @@
   ],
   "license": "BSD-3-Clause",
   "jspm": {
-    "main": "release/browser/element-dataset.js"
+    "main": "lib/browser/index.release.js"
   },
-  "main": "./lib/index-browser.js",
-  "jsnext:main": "./lib/index-browser.es.js",
-  "browser": {
-    "./lib/index.js": "./lib/index-browser.js",
-    "./lib/index.es.js": "./lib/index-browser.es.js"
-  },
+  "main": "./lib/browser/index.cjs.js",
+  "jsnext:main": "./lib/browser/index.es.js",
+  "module": "./lib/browser/index.es.js",
   "scripts": {
-    "build": "./node_modules/@epiloque/weaver/bin/weaver.js release --browser --production",
+    "build:targets": "./node_modules/@epiloque/weaver/bin/weaver.js build --browser --production",
+    "build:release": "./node_modules/@epiloque/weaver/bin/weaver.js release --browser --production",
+    "build": "npm run build:targets && npm run build:release",
     "test": "./node_modules/@epiloque/weaver/bin/weaver.js test --browser"
   },
   "files": [
-    "lib",
-    "release"
+    "lib"
   ],
   "weaver": {
     "overwrite": [
@@ -39,8 +37,8 @@
   "devDependencies": {
     "tape": "^4.6.3",
     "jquery": "^3.1.1",
-    "@epiloque/weaver": "^3.3.35",
-    "babel-preset-conglomerate": "^3.3.35"
+    "@epiloque/weaver": "^3.5.0",
+    "babel-preset-conglomerate": "^3.5.0"
   },
   "dependencies": {
     "babel-runtime": "^6.18.0"

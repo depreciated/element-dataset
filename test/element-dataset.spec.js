@@ -2,7 +2,7 @@
 
 import test from 'tape'
 import $ from 'jquery'
-import polyfill from '../lib/index-browser'
+import polyfill from '../lib/browser/index.es'
 
 polyfill()
 
