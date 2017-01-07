@@ -21,10 +21,10 @@
   "jsnext:main": "./lib/browser/index.es.js",
   "module": "./lib/browser/index.es.js",
   "scripts": {
-    "build:targets": "./node_modules/@epiloque/weaver/bin/weaver.js build --browser --production",
-    "build:release": "./node_modules/@epiloque/weaver/bin/weaver.js release --browser --production",
+    "build:targets": "weaver build --browser --production",
+    "build:release": "weaver release --browser --production",
     "build": "npm run build:targets && npm run build:release",
-    "test": "./node_modules/@epiloque/weaver/bin/weaver.js test --browser"
+    "test": "weaver test --browser"
   },
   "files": [
     "lib"
