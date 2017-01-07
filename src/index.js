@@ -3,8 +3,8 @@
 export default function elementDatasetPolyfill () {
   if (!document.documentElement.dataset &&
     (
-      !Object.getOwnPropertyDescriptor(Element.prototype, 'dataset') ||
-      !Object.getOwnPropertyDescriptor(Element.prototype, 'dataset').get
+      !Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'dataset') ||
+      !Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'dataset').get
     )
   ) {
     const descriptor = {}
@@ -56,6 +56,6 @@ export default function elementDatasetPolyfill () {
       return map
     }
 
-    Object.defineProperty(Element.prototype, 'dataset', descriptor)
+    Object.defineProperty(HTMLElement.prototype, 'dataset', descriptor)
   }
 }
