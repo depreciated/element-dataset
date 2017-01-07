@@ -1,7 +1,7 @@
 {
   "name": "element-dataset",
   "description": "HTMLElement.dataset polyfill",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "homepage": "https://github.com/epiloque/element-dataset",
   "author": "Mark Milstein <mark@epiloque.com>",
   "repository": "https://github.com/epiloque/element-dataset.git",
