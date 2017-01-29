@@ -21,10 +21,10 @@
   "jsnext:main": "./lib/browser/index.es.js",
   "module": "./lib/browser/index.es.js",
   "scripts": {
-    "build:targets": "weaver build --browser --production",
-    "build:release": "weaver release --browser --production",
+    "build:targets": "weaver-build --browser --production",
+    "build:release": "weaver-build --mode=release --browser --production",
     "build": "npm run build:targets && npm run build:release",
-    "test": "weaver test --browser"
+    "test": "weaver-test --browser"
   },
   "files": [
     "lib"
@@ -37,8 +37,8 @@
   "devDependencies": {
     "tape": "^4.6.3",
     "jquery": "^3.1.1",
-    "@epiloque/weaver": "^3.5.1",
-    "babel-preset-conglomerate": "^3.5.1"
+    "@epiloque/weaver": "^4.0.2",
+    "babel-preset-conglomerate": "^3.5.4"
   },
   "dependencies": {
     "babel-runtime": "^6.18.0"
