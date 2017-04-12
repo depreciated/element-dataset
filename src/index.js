@@ -47,7 +47,7 @@ export default function elementDatasetPolyfill () {
           const propName = name.substr(5).replace(/-./g, toUpperCase)
 
           Object.defineProperty(map, propName, {
-            enumerable: this.enumerable,
+            enumerable: descriptor.enumerable,
             get: getter.bind({ value: value || '' }),
             set: setter.bind(element, name)
           })
