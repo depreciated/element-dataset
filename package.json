@@ -1,7 +1,7 @@
 {
   "name": "element-dataset",
   "description": "HTMLElement.dataset polyfill",
-  "version": "2.2.6",
+  "version": "2.2.7",
   "homepage": "https://github.com/discontinued/element-dataset",
   "repository": "https://github.com/discontinued/element-dataset.git",
   "keywords": [
